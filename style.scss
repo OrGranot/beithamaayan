@@ -109,7 +109,7 @@ p {
   --clr-secondary-800: hsl(0, 46%, 24%);
   --clr-accent-400: hsl(38, 67%, 86%);
 
-  --fs-300: .725rem;
+  --fs-300: .825rem;
   --fs-400: 1.125rem;
   --fs-500: clamp(0.95rem, 3vw, 1.25rem);
   --fs-600: clamp(1rem, 2.5vw, 1.75rem);
@@ -341,6 +341,11 @@ section:not(.hero) {
   &:active {
     scale: 0.9;
   }
+
+  &[data-small="true"] {
+    font-size: var(--fs-300);
+    padding: 0.25em 1.5em;
+  }
 }
 
 /*  LAYOUT  */
@@ -349,7 +354,7 @@ header {
   --header-padding-block: 0.5;
 
   z-index: 1;
-  padding: 0.5em 0.75em;
+  padding: 0.5em 2em;
 
   .logo {
     --gap: 0;
@@ -367,6 +372,12 @@ header {
     img {
       height: calc(var(--header-height));
     }
+
+
+  }
+
+  .btn {
+    margin-inline-start: auto;
   }
 
   nav ul {
