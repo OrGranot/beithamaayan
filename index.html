@@ -62,18 +62,24 @@
             </div>
           </div>
           <div class="about_cards flex-column">
-            <div class="card-img">
-              <img src="/assets/images/kindergarden.jpg" alt="">
-              <p>גנים</p>
-            </div>
-            <div class="card-img">
-              <img src="/assets/images/forest.jpg" alt="">
-              <p>בית ספר</p>
-            </div>
-            <div class="card-img">
-              <img src="/assets/images/organization.jpg" alt="">
-              <p>עמותת מתיישבים עם הסביבה</p>
-            </div>
+            <a href="#kindergarden">
+              <div class="card-img">
+                <img src="/assets/images/kindergarden.jpg" alt="">
+                <p>גנים</p>
+              </div>
+            </a>
+            <a href="#school">
+              <div class="card-img">
+                <img src="/assets/images/forest.jpg" alt="">
+                <p>בית ספר</p>
+              </div>
+            </a>
+            <a href="#organization">
+              <div class="card-img">
+                <img src="/assets/images/organization.jpg" alt="">
+                <p>עמותת מתיישבים עם הסביבה</p>
+              </div>
+            </a>
           </div>
         </div>
       </div>
@@ -83,7 +89,11 @@
       <div class="container">
         <h4 class="text-primary">בית המעיין מציג:</h4>
         <!-- <img src="./assets/images/logo.jpg" class="main_video"></img> -->
-        <video src="/assets/videos/תדמית בית המעיין.mp4"></video>
+        <!-- <video src="https://www.youtube.com/watch?v=afu351ufFxo&ab_channel=%D7%91%D7%99%D7%AA%D7%94%D7%9E%D7%A2%D7%99%D7%99%D7%9F%D7%97%D7%95%D7%A7%D7%95%D7%A7"></video> -->
+        <iframe  src="https://www.youtube.com/embed/afu351ufFxo" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
       </div>
     </section>
 
@@ -91,7 +101,7 @@
       <div class="container">
         <p class="fs-500">מטרתנו <span class="fw-bold">כמחנכים</span> היא להוות עבור הילד <span class="fw-bold">סביבה התומכת</span> בהתפתחותו הפיסית, הנפשית והרוחנית כשהמעשה <span class="fw-bold">והדוגמא האישית</span> מהווים מופת
         לכך, והם אלו המעוררים את כוחות הרצון הפנימיים, <span class="fw-bold">השמחה והעשייה</span> של הילד הצעיר.</p>
-        <a href="#form" class="btn">ליצירת קשר</a>
+        <a href="#contact-form" class="btn">ליצירת קשר</a>
       </div>
     </section>
 
@@ -129,7 +139,7 @@
       </div>
     </section>
 
-    <section class="kindergarden background-yellow">
+    <section class="kindergarden background-yellow" id="kindergarden">
       <h2 class="fs-600 text-secondary fw-bold">גנים</h2>
       <div class="container flex-row">
         <div class="card background-blue">
@@ -177,7 +187,7 @@
       </div>
     </section>
 
-    <section class="school background-pink">
+    <section class="school background-pink" id="school">
       <h2 class="fs-600 text-secondary fw-bold">בתי ספר</h2>
       <div class="container flex-row">
         <div class="card background-yellow">
@@ -225,7 +235,7 @@
       </div>
     </section>
 
-    <section class="organization background-blue">
+    <section class="organization background-blue" id="organization">
       <h2 class="fs-600 text-secondary fw-bold">עמותת מתיישבים עם הסביבה</h2>
       <div class="container flex-row">
         <div class="card background-yellow">
@@ -289,7 +299,7 @@
             <p class="">bethamaayan@gmail.com</p>
             <p class="">משרד: 04-6799807</p>
           </div>
-          <form action="" id="form">
+          <form action="" id="contact-form">
             <div class="form-inputs flex-column fw-bold text-secondary">
               <div class="form-group">
                 <label for="name">שם</label>

@@ -63,6 +63,10 @@ select {
   font: inherit;
 }
 
+p {
+  max-width: 60ch;
+}
+
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
@@ -407,7 +411,7 @@ header {
   &_text {
     flex: 1;
     justify-content: center;
-
+    align-items: center;
   }
 
   &_cards {
@@ -419,8 +423,9 @@ header {
 .video {
   --margin-sides: 5rem;
 
-  video {
+  iframe {
     width: 100%;
+    aspect-ratio: 18/9;
   }
 }
 
@@ -431,6 +436,7 @@ header {
 
   p {
     margin-block-end: 1rem;
+    margin-inline: auto;
   }
 }
 
