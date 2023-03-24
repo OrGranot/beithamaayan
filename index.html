@@ -1,354 +1,190 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@0.2.28/bundled/lenis.js" defer></script>
-
-    <script type="module" src="/main.js" defer></script>
-    <title>בית המעיין</title>
-  </head>
-  <body>
-    <header class="flex-row background-yellow">
-      <div class="logo flex-row">
-        <img src="./assets/images/logo-transparent.png" alt="school logo">
-        <h4 class="logo_title flex-column">
-          בית המעיין
-          <span>בית ספר סביבתי ברוח וולדורף</span>
-        </h4>
-      </div>
-      <nav>
-        <ul role="list" class="flex-row">
-          <a href="#kindergarden">
-            <li>גנים</li>
-          </a>
-          <a href="#school">
-            <li>בית ספר</li>
-          </a>
-          <a href="#organization">
-            <li>עמותת מתיישבים עם הסביבה</li>
-          </a>
-          <a href="#">
-            <li>טפסים להורדה</li>
-          </a>
-        </ul>
-      </nav>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="/main.js" defer></script>
+  <title>בית המעיין</title>
+</head>
+<body>
+  <header>
+    <div class="logo flex-row">
+      <img src="./assets/images/logo-transparent.png" alt="school logo">
+      <h4 class="logo_title flex-column">
+        בית המעיין
+        <span>בית ספר סביבתי ברוח וולדורף</span>
+      </h4>
+    </div>
+    <nav>
+      <ul role="list" class="flex-row">
+        <a href="#kindergarden" class="nav-link">
+          <li>גנים</li>
+        </a>
+        <a href="#school">
+          <li>בית ספר</li>
+        </a>
+        <a href="#organization">
+          <li>עמותת מתיישבים עם הסביבה</li>
+        </a>
+        <a href="#">
+          <li>מידע שימושי</li>
+        </a>
+      </ul>
       <a href="#contact-form" class="btn" data-small="true">ליצירת קשר</a>
-    </header>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="hero_img"></div>
+    <div class="hero_content">
+      <h1>מטרתנו כמחנכים היא להוות עבור הילד סביבה התומכת בהתפתחותו הפיסית, הנפשית והרוחנית כשהמעשה והדוגמא האישית מהווים מופת
+      לכך, והם אלו המעוררים את כוחות הרצון הפנימיים, השמחה והעשייה של ילדנו.</h1>
+      <a href="#contact-form" class="btn" data-small="true">ליצירת קשר</a>
+    </div>
 
-    <section class="hero background-pink">
-        <div class="hero_img inner-glow">
-          <img src="assets/images/hero.jpg" alt="">
+  </section>
+  <section class="movie">
+    <h2>בית המעיין מציג</h2>
+    <iframe src="https://www.youtube.com/embed/afu351ufFxo" title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+  </section>
+  <section class="about">
+    <div class="about_content">
+      <div class="about_quote">
+        <p>כל חינוך הוא חינוך עצמי,
+        ואנו כמחנכים
+        מהווים רק את סביבתו
+        של הילד המחנך את עצמו.
+        עלינו ליצור
+        את הסביבה המתאימה
+        כך שהילד יוכל לחנך
+        את עצמו על ידינו,
+        כפי שעליו לחנך את עצמו
+        מתוך גורלו ויעודו הפנימיים
+        </p>
+        <p>שטיינר,
+        20.4.1923</p>
+      </div>
+      <div class="about_title">
+        <h2>מטרתנו כמחנכים היא להוות עבור הילד סביבה התומכת בהתפתחותו הפיסית, הנפשית והרוחנית כשהמעשה והדוגמא האישית מהווים מופת
+        לכך, והם אלו המעוררים את כוחות הרצון הפנימיים, השמחה והעשייה של ילדנו.</h2>
+      </div>
+    </div>
+    <div class="about_links">
+      <a href="#kindergarden">
+        <div class="card">
+          <div class="card_img"></div>
+          <div class="card_header">גנים</div>
         </div>
-        <div class="hero_body">
-            <div class="hero_quote-wrapper flex-column">
-              <quote class="hero_quote fs-600">כל חינוך הוא <span class="fw-bold">חינוך עצמי</span>,
-              ואנו כמחנכים <span class="fw-bold">מהווים רק את סביבתו</span> של הילד המחנך את עצמו.
-              עלינו ליצור את <span class="fw-bold">הסביבה המתאימה</span> כך שהילד יוכל לחנך את עצמו על ידינו,
-              כפי שעליו <span class="fw-bold">לחנך את עצמו</span> מתוך גורלו ויעודו הפנימיים
-              </quote>
-              <p class="hero_name text-secondary fs-400 fw-bold flex-column">שטיינר, <span class="fw-regular">20.4.1923</span></p>
-            </div>
-          </div>
-    </section>
-
-    <section class="about flex-column background-yellow">
-      <h2 class="text-primary">בית המעיין</h2>
-      <div class="container">
-        <div class="about_content flex-row">
-          <div class="about_text flex-column">
-            <p>בית המעיין התחיל את דרכו בשנת 2006 כיוזמה של עמותת "מתיישבים עם הסביבה", בכדי להיות בית חינוך לילדים החל מגיל הגן ועד
-            לסיום כיתה ח'.
-            בשנת 2019 קיבל הכרה רשמית ממשרד החינוך כבית ספר ייחודי על אזורי במועצה אזורית עמק הירדן.
-            בית המעיין הינו בית חינוך סביבתי ברוח וולדורף לצד חינוך יער ולימודים במרחבי הטבע הסובב אותנו.</p>
-            <div>
-              <h4 class="text-primary">אנו מאמינים כי:</h4>
-              <p>האמנות הינה גשר אל נפש הילדים. מאפשר לתלמידים לחוות למידה עשירה ומגוונת,
-              חינוך יער מאפשר חיבור הילדים לסביבה הטבעית דרך שהות של ימים שלמים בטבע הקרוב. ימים אלה מהווים הזדמנות ללימוד מלאכות
-              ומיומנויות יער והיכרות עם הטבע והסביבה.</p>
-            </div>
-          </div>
-          <div class="about_cards flex-column">
-            <a href="#kindergarden">
-              <div class="card-img">
-                <img src="/assets/images/kindergarden.jpg" alt="">
-                <p>גנים</p>
-              </div>
-            </a>
-            <a href="#school">
-              <div class="card-img">
-                <img src="/assets/images/forest.jpg" alt="">
-                <p>בית ספר</p>
-              </div>
-            </a>
-            <a href="#organization">
-              <div class="card-img">
-                <img src="/assets/images/organization.jpg" alt="">
-                <p>עמותת מתיישבים עם הסביבה</p>
-              </div>
-            </a>
-          </div>
+      </a>
+      <a href="#school">
+        <div class="card">
+          <div class="card_img"></div>
+          <div class="card_header">בית ספר</div>
         </div>
-      </div>
-    </section>
-
-    <section class="video background-pink">
-      <div class="container">
-        <h4 class="text-primary">בית המעיין מציג:</h4>
-        <!-- <img src="./assets/images/logo.jpg" class="main_video"></img> -->
-        <!-- <video src="https://www.youtube.com/watch?v=afu351ufFxo&ab_channel=%D7%91%D7%99%D7%AA%D7%94%D7%9E%D7%A2%D7%99%D7%99%D7%9F%D7%97%D7%95%D7%A7%D7%95%D7%A7"></video> -->
-        <iframe  src="https://www.youtube.com/embed/afu351ufFxo" title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen></iframe>
-      </div>
-    </section>
-
-    <section class="cta background-yellow">
-      <div class="container">
-        <p class="fs-500">מטרתנו <span class="fw-bold">כמחנכים</span> היא להוות עבור הילד <span class="fw-bold">סביבה התומכת</span> בהתפתחותו הפיסית, הנפשית והרוחנית כשהמעשה <span class="fw-bold">והדוגמא האישית</span> מהווים מופת
-        לכך, והם אלו המעוררים את כוחות הרצון הפנימיים, <span class="fw-bold">השמחה והעשייה</span> של הילד הצעיר.</p>
-        <a href="#contact-form" class="btn">ליצירת קשר</a>
-      </div>
-    </section>
-
-    <section class="activity background-blue">
-      <div class="container">
-        <div class="cards-grid">
-          <div class="card-img">
-            <img src="/assets/images/kindergarden.jpg" alt="">
-            <p>גנים</p>
-          </div>
-          <div class="card-img">
-            <img src="/assets/images/kindergarden.jpg" alt="">
-            <p>גנים</p>
-          </div>
-          <div class="card-img">
-            <img src="/assets/images/kindergarden.jpg" alt="">
-            <p>גנים</p>
-          </div>
-          <div class="card-img">
-            <img src="/assets/images/kindergarden.jpg" alt="">
-            <p>גנים</p>
-          </div>
-          <div class="card-img">
-            <img src="/assets/images/kindergarden.jpg" alt="">
-            <p>גנים</p>
-          </div>
-          <div class="card-img">
-            <img src="/assets/images/kindergarden.jpg" alt="">
-            <p>גנים</p>
-          </div>
-          <div class="activity_title">
-            <p class="fs-600 text-secondary fw-bold">ערכי בית המעיין</p>
-          </div>
+      </a>
+      <a href="#organization">
+        <div class="card">
+          <div class="card_img"></div>
+          <div class="card_header">עמותת מתיישבים עם הסביבה</div>
         </div>
-      </div>
-    </section>
+      </a>
+    </div>
+  </section>
+  <section class="activities">
+    <h2>עשיות בית המעיין</h2>
+    <div class="activities_img-grid">
+      <img src="./assets/images/organization.jpg" alt="">
+      <img src="./assets/images/forest.jpg" alt="">
+      <img src="./assets/images/hero.jpg" alt="">
+      <img src="./assets/images/kindergarden.jpg" alt="">
+      <img src="./assets/images/forest.jpg" alt="">
+      <img src="./assets/images/organization.jpg" alt="">
+      <img src="./assets/images/hero.jpg" alt="">
+      <img src="./assets/images//kindergarden.jpg" alt="">
+      <img src="./assets/images/organization.jpg" alt="">
+      <img src="./assets/images/forest.jpg" alt="">
+      <img src="./assets/images/organization.jpg" alt="">
+      <img src="./assets/images/hero2.jpg" alt="">
+    </div>
+  </section>
+  <section class="case">
+    <h2 class="case_title" id="kindergarden">גנים</h2>
+    <p class="case_content">בית המעיין התחיל את דרכו בשנת 2006 כיוזמה של עמותת "מתיישבים עם הסביבה", בכדי להיות בית חינוך לילדים החל מגיל הגן ועד
+    לסיום כיתה ח'.
+    בשנת 2019 קיבל הכרה רשמית ממשרד החינוך כבית ספר ייחודי על אזורי במועצה אזורית עמק הירדן.
+    בית המעיין הינו בית חינוך סביבתי ברוח וולדורף לצד חינוך יער ולימודים במרחבי הטבע הסובב אותנו.</p>
+  </section>
+  <section class="case" id="school">
+    <h2 class="case_title">בית ספר</h2>
+    <p class="case_content">בית המעיין התחיל את דרכו בשנת 2006 כיוזמה של עמותת "מתיישבים עם הסביבה", בכדי להיות בית חינוך
+      לילדים החל מגיל הגן ועד
+      לסיום כיתה ח'.
+      בשנת 2019 קיבל הכרה רשמית ממשרד החינוך כבית ספר ייחודי על אזורי במועצה אזורית עמק הירדן.
+      בית המעיין הינו בית חינוך סביבתי ברוח וולדורף לצד חינוך יער ולימודים במרחבי הטבע הסובב אותנו.</p>
+  </section>
+  <section class="case" id="organization">
+    <h2 class="case_title">עמותת מתיישבים עם הסביבה</h2>
+    <p class="case_content">בית המעיין התחיל את דרכו בשנת 2006 כיוזמה של עמותת "מתיישבים עם הסביבה", בכדי להיות בית חינוך
+      לילדים החל מגיל הגן ועד
+      לסיום כיתה ח'.
+      בשנת 2019 קיבל הכרה רשמית ממשרד החינוך כבית ספר ייחודי על אזורי במועצה אזורית עמק הירדן.
+      בית המעיין הינו בית חינוך סביבתי ברוח וולדורף לצד חינוך יער ולימודים במרחבי הטבע הסובב אותנו.</p>
+  </section>
 
-    <section class="kindergarden background-yellow" id="kindergarden">
-      <h2 class="fs-600 text-secondary fw-bold">גנים</h2>
+  <section class="contact">
+    <div class="contact_quote">
+      <p>"אמר האדם הפוקח עיניו:
+      עושרו של עולם מה נפלא ומה רב-
+      בוקר בוקר נלכד בלבי כברשת העולם ומלואו,
+      המצולה היבשת, ואורות וצללים וחגים וחולין,
+      ומילים וצלילים ושדות שיבולים וכל צבעי הקשת”</p>
+      <p>לאה גולדברג</p>
+    </div>
+    <div class="contact_group">
+      <div class="contact_form">
+        <div class="form-group">
+          <label for="name">שם</label>
+          <input type="text" id="name">
+        </div>
+        <div class="form-group">
+          <label for="phone">טלפון</label>
+          <input type="text" id="phone">
+        </div>
+        <div class="form-group">
+          <label for="email">אימייל</label>
+          <input type="text" id="email">
+        </div>
+        <input type="button" value="שלח">
+      </div>
+      <div class="contact_details">
+        <h3>פרטי התקשרות:</h3>
+        <p>bethamaayan@gmail.com</p>
+        <p>משרד: 04-6799807</p>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="footer_wrapper">
       <div class="container flex-row">
-        <div class="card background-blue">
-          <div class="card_img">
-            <img src="/assets/images/forest.jpg" alt="">
-          </div>
-          <div class="card_content">
-            <h3 class="text-secondary">לימוד לפי תקופות</h3>
-            <div class="fs-300 flex-column">
-              <p>לימוד לפי תקופות</p>
-              <p>לימוד לפי תקופות</p>
-              <p>לימוד לפי תקופות</p>
-              <p>לימוד לפי תקופות</p>
-            </div>
-          </div>
+        <div class="logo flex-column">
+          <img src="/assets/images/logo.jpg" alt="">
+          <p class="fs-300 fw-bold text-secondary"><span>©</span>בית המעיין 2023</p>
         </div>
-        <div class="card background-blue">
-          <div class="card_img">
-            <img src="/assets/images/forest.jpg" alt="">
-          </div>
-          <div class="card_content">
-            <h3 class="text-secondary">לימוד לפי תקופות</h3>
-            <div class="fs-300 flex-column">
-              <p>לימוד לפי תקופות</p>
-              <p>לימוד לפי תקופות</p>
-              <p>לימוד לפי תקופות</p>
-              <p>לימוד לפי תקופות</p>
-            </div>
-          </div>
-        </div>
-        <div class="card background-blue">
-          <div class="card_img">
-            <img src="/assets/images/forest.jpg" alt="">
-          </div>
-          <div class="card_content">
-            <h3 class="text-secondary">לימוד לפי תקופות</h3>
-            <div class="fs-300 flex-column">
-              <p>לימוד לפי ללשגדכלגד</p>
-              <p>לימוד לפי תקופות</p>
-              <p>לימוד לפי תקופות</p>
-              <p>לימוד לפי תקופות</p>
-            </div>
-          </div>
-        </div>
+        <ul role="list">
+          <li><a href="#">דף הבית</a></li>
+          <li><a href="#">יצירת קשר</a></li>
+          <li><a href="#">מפת אתר</a></li>
+          <li><a href="#">אתר משרד החינוך</a></li>
+          <li><a href="#">וודורף ישראל</a></li>
+          <li><a href="#">וולדורף בעולם</a></li>
+          <li><a href="#">טופס הרשמה</a></li>
+          <li><a href="#">תקנון בית המעיין</a></li>
+        </ul>
       </div>
-    </section>
-
-    <section class="school background-pink" id="school">
-      <h2 class="fs-600 text-secondary fw-bold">בתי ספר</h2>
-      <div class="container flex-row">
-        <div class="card background-yellow">
-          <div class="card_img">
-            <img src="/assets/images/kindergarden.jpg" alt="">
-          </div>
-          <div class="card_content">
-            <h3 class="text-secondary">לימוד לפי תקופות</h3>
-            <div class="fs-300 flex-column">
-              <p>לימוד לפי תקופות</p>
-              <p>לימוד לפי תקופות</p>
-              <p>לימוד לפי תקופות</p>
-              <p>לימוד לפי תקופות</p>
-            </div>
-          </div>
-        </div>
-        <div class="card background-yellow">
-          <div class="card_img">
-            <img src="/assets/images/kindergarden.jpg" alt="">
-          </div>
-          <div class="card_content">
-            <h3 class="text-secondary">לימוד לפי תקופות</h3>
-            <div class="fs-300 flex-column">
-              <p>לימוד לפי תקופות</p>
-              <p>לימוד לפי תקופות</p>
-              <p>לימוד לפי תקופות</p>
-              <p>לימוד לפי תקופות</p>
-            </div>
-          </div>
-        </div>
-        <div class="card background-yellow">
-          <div class="card_img">
-            <img src="/assets/images/kindergarden.jpg" alt="">
-          </div>
-          <div class="card_content">
-            <h3 class="text-secondary">לימוד לפי תקופות</h3>
-            <div class="fs-300 flex-column">
-              <p>לימוד לפי ללשגדכלגד</p>
-              <p>לימוד לפי תקופות</p>
-              <p>לימוד לפי תקופות</p>
-              <p>לימוד לפי תקופות</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="organization background-blue" id="organization">
-      <h2 class="fs-600 text-secondary fw-bold">עמותת מתיישבים עם הסביבה</h2>
-      <div class="container flex-row">
-        <div class="card background-yellow">
-          <div class="card_img">
-            <img src="/assets/images/kindergarden.jpg" alt="">
-          </div>
-          <div class="card_content">
-            <h3 class="text-secondary">לימוד לפי תקופות</h3>
-            <div class="fs-300 flex-column">
-              <p>לימוד לפי תקופות</p>
-              <p>לימוד לפי תקופות</p>
-              <p>לימוד לפי תקופות</p>
-              <p>לימוד לפי תקופות</p>
-            </div>
-          </div>
-        </div>
-        <div class="card background-yellow">
-          <div class="card_img">
-            <img src="/assets/images/kindergarden.jpg" alt="">
-          </div>
-          <div class="card_content">
-            <h3 class="text-secondary">לימוד לפי תקופות</h3>
-            <div class="fs-300 flex-column">
-              <p>לימוד לפי תקופות</p>
-              <p>לימוד לפי תקופות</p>
-              <p>לימוד לפי תקופות</p>
-              <p>לימוד לפי תקופות</p>
-            </div>
-          </div>
-        </div>
-        <div class="card background-yellow">
-          <div class="card_img">
-            <img src="/assets/images/kindergarden.jpg" alt="">
-          </div>
-          <div class="card_content">
-            <h3 class="text-secondary">לימוד לפי תקופות</h3>
-            <div class="fs-300 flex-column">
-              <p>לימוד לפי ללשגדכלגד</p>
-              <p>לימוד לפי תקופות</p>
-              <p>לימוד לפי תקופות</p>
-              <p>לימוד לפי תקופות</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact background-yellow">
-      <div class="container flex-column">
-        <div class="contact_quote  text-primary flex-column">
-          <p class="fs-600"><span>"אמר האדם הפוקח עיניו:</span>
-            <span>עושרו של עולם מה נפלא ומה רב-</span>
-            <span>בוקר בוקר נלכד בלבי כברשת העולם ומלואו,</span>
-            <span>המצולה היבשת, ואורות וצללים וחגים וחולין,</span>
-            <span>ומילים וצלילים ושדות שיבולים וכל צבעי הקשת”</span></p>
-          <p class="contact_quote-name text-secondary fw-bold fs-400">לאה גולדברג</p>
-        </div>
-        <div class="contact_form flex-row">
-          <div class="contact_details">
-            <h5 class="text-secondary fs-400">פרטי התקשרות:</h5>
-            <p class="">bethamaayan@gmail.com</p>
-            <p class="">משרד: 04-6799807</p>
-          </div>
-          <form action="" id="contact-form">
-            <div class="form-inputs flex-column fw-bold text-secondary">
-              <div class="form-group">
-                <label for="name">שם</label>
-                <input type="text" id="name">
-              </div>
-              <div class="form-group">
-                <label for="phone">טלפון</label>
-                <input type="number" id="phone">
-              </div>
-              <div class="form-group">
-                <label for="email">אימייל</label>
-                <input type="email" id="email">
-              </div>
-            </div>
-            <button type="submit" class="btn">שלח</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <div class="footer_wrapper">
-        <div class="container flex-row">
-          <div class="logo flex-column">
-            <img src="/assets/images/logo.jpg" alt="">
-            <p class="fs-300 fw-bold text-secondary"><span>©</span>בית המעיין 2023</p>
-          </div>
-          <ul role="list">
-            <li><a href="#">דף הבית</a></li>
-            <li><a href="#">יצירת קשר</a></li>
-            <li><a href="#">מפת אתר</a></li>
-            <li><a href="#">אתר משרד החינוך</a></li>
-            <li><a href="#">וודורף ישראל</a></li>
-            <li><a href="#">וולדורף בעולם</a></li>
-            <li><a href="#">טופס הרשמה</a></li>
-            <li><a href="#">תקנון בית המעיין</a></li>
-          </ul>
-        </div>
-        <img src="assets/images/mityashvim.png" alt="לוגו עמותת מתיישבים עם הסביבה">
-      </div>
-    </footer>
-  </body>
+      <img src="assets/images/mityashvim.png" alt="לוגו עמותת מתיישבים עם הסביבה">
+    </div>
+  </footer>
+</body>
 </html>
