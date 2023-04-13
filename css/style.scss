@@ -119,10 +119,10 @@
 
 .inner-glow {
   position: relative;
-
   &::after {
     content: '';
     position: absolute;
+    pointer-events: none;
     inset:0;
     box-shadow: 0 0 7px 3px rgb(white, 1) inset;
     z-index: 1;
@@ -210,6 +210,14 @@ header {
   padding-inline-end: 2rem;
   padding-block: 0.5em;
   color: var(--clr-secondary);
+  transition: scale 450ms,
+              opacity 450ms;
+  transform-origin: top;
+
+  &.hide {
+    scale: 100% 0;
+    opacity: 0;
+  }
 
   .logo {
     --gap: 0;
