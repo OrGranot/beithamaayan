@@ -1,6 +1,9 @@
 import './css/reset.scss';
 import './css/style.scss';
 const nav = document.querySelector('header')
+const menuToggle = document.querySelector('.menu-toggle')
+const header = document.querySelector('header')
+
 let scrollPos = 0
 
 
@@ -13,4 +16,9 @@ window.addEventListener('scroll', (e) => {
     nav.classList.remove('hide')
   }
   scrollPos = pos
+})
+
+
+menuToggle.addEventListener('click', () => {
+  header.classList.toggle('open')
 })

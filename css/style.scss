@@ -56,7 +56,7 @@
     // --header-height: 7.5rem;
     // background-color: red;
 
-    --fs-200: 0.8rem;
+    --fs-200: 0.9rem;
     --fs-300: 1.15rem;
     --fs-400: 1.45rem;
     --fs-500: 1.65rem;
@@ -119,6 +119,8 @@
 
 .inner-glow {
   position: relative;
+  isolation: isolate;
+
   &::after {
     content: '';
     position: absolute;
@@ -138,8 +140,9 @@
   flex-direction: column;
   text-align: center;
   box-shadow: 3px 3px 5px 1px rgb(0, 0, 0, 0.2);
-
   width: 100%;
+  transition: scale 350ms;
+  isolation: isolate;
 
     img {
         max-height: 7rem;
@@ -152,6 +155,11 @@
       padding-inline: 1em;
       color: var(--clr-secondary);
     }
+
+  &:focus-within {
+    scale: 1.1;
+    outline: 2px solid var(--clr-accent);
+  }
 }
 .btn {
   display: inline-block;
@@ -207,13 +215,50 @@ header {
   z-index: 1;
   max-height: var(--header-height, 5rem);
   justify-content: space-between;
-  padding-inline-end: 2rem;
   padding-block: 0.5em;
   color: var(--clr-secondary);
   transition: scale 450ms,
-              opacity 450ms;
+              opacity 450ms,
+              max-height 350ms ;
   transform-origin: top;
 
+  &.open {
+    height: 100%;
+    max-height: 100%;
+    box-shadow: 0 0 100vh 100vh rgb(black, 0.5);
+
+
+    nav {
+      display: flex;
+      position: absolute;
+      inset: 0;
+      top: var(--header-height);
+      flex-direction: column;
+      justify-content: space-around;
+
+
+
+
+      ul {
+        margin: 0;
+        padding: 0;
+        flex-direction: column;
+        font-size: var(--fs-600);
+        align-items: center;
+        justify-content: center;
+      }
+
+      .btn {
+        font-size: var(--fs-600);
+      }
+    }
+  }
+
+  .container {
+    justify-content: space-between;
+    max-width: 80rem;
+
+  }
   &.hide {
     scale: 100% 0;
     opacity: 0;
@@ -240,6 +285,30 @@ header {
   nav {
     --gap: var(--fs-500);
     display: none;
+
+
+    @media(min-width: 64rem) {
+      font-size: var(--fs-200);
+      display: flex;
+      flex: 1;
+      justify-content: space-between;
+    }
+
+    .btn {
+      font-size: inherit;
+      align-self: center;
+      padding-inline: 1.5em;
+    }
+  }
+
+  .menu-toggle {
+    border: 0;
+    padding: 0.5em;
+    background-color: transparent;
+
+    @media(min-width: 64rem) {
+      display: none;
+    }
   }
 
   .menu-icon {
@@ -373,9 +442,31 @@ header {
     max-height: var(--card-height);
     object-fit: cover;
     box-shadow: 0 0 7px 3px rgb(white, 1) inset;
-
+    display: grid;
     img {
       height: 100%;
+      grid-column: 1/ -1;
+      grid-row: 1/ -1;
+    }
+    p {
+      grid-column: 1/ -1;
+      grid-row: 1/ -1;
+      margin-top: auto;
+      margin-bottom: 1em;
+      color: rgb(255, 234, 217);
+      font-size: var(--fs-500);
+      isolation: isolate;
+    }
+    p::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: 50%;
+      background-image: linear-gradient(transparent ,rgb(black, 0.8));
+      padding-top: 0.5em;
+      z-index: -1;
     }
   }
 }
@@ -476,6 +567,8 @@ header {
     .form-inputs {
       --gap: 0.3em;
       align-items: flex-end;
+      padding-inline: 2em;
+
       .form-group {
         display: flex;
         align-items: center;
@@ -495,6 +588,7 @@ header {
 
     .btn {
       align-self: flex-end;
+      font-size: var(--fs-300);
     }
   }
 
