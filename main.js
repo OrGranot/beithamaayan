@@ -25,10 +25,18 @@ menuToggle.addEventListener('click', () => {
   header.classList.toggle('open')
 })
 
-const tl = gsap.timeline({defaults: { duration: 1 }})
+const hero = gsap.timeline({defaults: { duration: 1 }})
+const video = gsap.timeline()
 
-tl
-// .to('.inner-glow img', {scale: 1.6, objectPosition: '0%', delay: 1})
-// .fromTo('.inner-glow img', {objectPosition: '0%'}, {objectPosition: '100%', duration: 2})
-.to('.hero .inner-glow', {width: '65%' , delay: 1 })
-.to('.hero_text', { left: '5vh', duration: 1, alpha: 1})
+
+let mm = gsap.matchMedia();
+
+mm.add("(min-width: 72.5rem)", () => {
+
+  hero
+  // .to('.inner-glow img', {scale: 1.6, objectPosition: '0%', delay: 1})
+  .to('.hero .inner-glow img', {scale: 1.5, delay: 0.5 })
+  .fromTo('.hero .inner-glow img', {objectPosition: '0%'}, {objectPosition: '100%', duration: 2})
+  .to('.hero .inner-glow', {width: '65%', duration: 2 }, '-=2')
+  .to('.hero_text', {top: 0, duration: 1, alpha: 1});
+});
