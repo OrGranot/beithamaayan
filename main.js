@@ -28,7 +28,7 @@ menuToggle.addEventListener('click', () => {
 const tl = gsap.timeline({defaults: { duration: 1 }})
 
 tl
-.to('.inner-glow img', {scale: 1.6, objectPosition: '0%', delay: 1})
-.fromTo('.inner-glow img', {objectPosition: '0%'}, {objectPosition: '100%', duration: 2})
-.to('.hero .inner-glow', {width: '65%' })
+// .to('.inner-glow img', {scale: 1.6, objectPosition: '0%', delay: 1})
+// .fromTo('.inner-glow img', {objectPosition: '0%'}, {objectPosition: '100%', duration: 2})
+.to('.hero .inner-glow', {width: '65%' , delay: 1 })
 .to('.hero_text', { left: '5vh', duration: 1, alpha: 1})
