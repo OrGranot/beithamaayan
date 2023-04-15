@@ -157,10 +157,11 @@
     }
 
   &:focus-within {
-    // scale: 1.1;
     outline: 2px solid var(--clr-accent);
   }
 }
+
+
 .btn {
   display: inline-block;
   cursor: pointer;
@@ -244,7 +245,6 @@ header {
         align-items: center;
         justify-content: center;
 
-
         @media(min-width:42.5rem) {
           font-size: var(--fs-600);
         }
@@ -295,6 +295,9 @@ header {
     }
     li {
       transition: scale 350ms;
+    }
+    a {
+      color: inherit;
     }
     li:hover {
       scale: 1.1;
@@ -691,6 +694,9 @@ header {
         text-align: start;
         margin-block-start: 2rem;
         padding-inline: 2rem;
+      }
+      .case_cards {
+        margin-inline-end: 5vw;
       }
     }
     &.organization {
