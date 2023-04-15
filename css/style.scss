@@ -195,7 +195,7 @@
 
 /** LAYOUT **/
 
-section:not(.hero,#shadow-host-companion) {
+section:not(.hero,#shadow-host-companion, .about) {
   padding-block: 3rem;
   box-shadow: 0 0 10px 5px rgb(white, 1) inset;
 }
@@ -240,7 +240,7 @@ header {
         margin: 0;
         padding: 0;
         flex-direction: column;
-        font-size: var(--fs-400);
+        font-size: var(--fs-500);
         align-items: center;
         justify-content: center;
 
@@ -319,7 +319,7 @@ header {
 }
 
 .hero {
-  --container-size: 4rem;
+  --container-size: 2rem;
   margin-top: calc(var(--header-height));
   min-height: calc(100dvh - var(--header-height));
 
@@ -331,7 +331,7 @@ header {
   }
   &_text {
     padding-block: 5rem;
-    max-width: 65ch;
+    max-width: 60ch;
     text-align: center;
     font-size: var(--fs-500);
 
@@ -360,7 +360,30 @@ header {
 
 .about {
   position: relative;
-  padding-block-end: 3rem;
+
+  @media(min-width: 72.5rem) {
+
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 0.5fr 1fr;
+
+    .quote {
+      padding-block-start: 4rem;
+      padding-inline: 2em;
+      grid-column: 1 / 2;
+      grid-row: 1 / -1;
+
+    }
+    &_text {
+      grid-column: 2 / -1;
+      grid-row: 1 / 2;
+    }
+    &_cards {
+      width: 100%;
+      grid-column: 1 / -1;
+      grid-row: 2 / -1;
+    }
+  }
 
   &::after {
     content: '';
@@ -368,22 +391,48 @@ header {
     background-image: url('../assets/wallpapers/blue-background.jpg');
     background-size: cover;
     background-position: bottom;
+    background-repeat: no-repeat;
     transform: rotate(180deg);
     inset: 0;
     top: 40%;
     z-index: -1;
+    box-shadow: 0 0 7px 3px rgb(white, 1) inset;
+
+    @media(min-width:72.5rem) {
+      transform: rotate(0);
+      grid-column: 1 / 2;
+      grid-row: 1 / -1;
+      top: 0;
+    }
   }
   .quote {
     display: none;
+    text-align: center;
+    font-size: var(--fs-300);
+    font-family: var(--ff-secondary);
+    max-width: 35ch;
+    margin-inline: auto;
+
+    @media(min-width: 72.5rem) {
+      display: block;
+    }
+
+    p {
+      font-family: var(--ff-primary);
+      font-weight: var(--fw-900);
+      font-size: var(--fs-200);
+      text-align: end;
+      margin-block: 1em;
+    }
   }
 
   &_text {
     --container-size: 2rem;
     text-align: center;
+    padding-block-start: 3rem;
     p {
-      max-width: 55ch;
+      max-width: 45ch;
       margin-inline: auto;
-      margin-block-end: 3rem;
     }
   }
 
@@ -391,12 +440,21 @@ header {
     --container-size: 3rem;
     --gap: 2rem;
 
+    padding-block: 3rem;
     align-items: stretch;
     justify-content: center;
 
     .card {
       flex-basis: 20rem;
       min-width: fit-content;
+
+
+      @media(min-width: 72.5rem) {
+
+        img {
+          max-height: 15rem;
+        }
+      }
     }
   }
 }
