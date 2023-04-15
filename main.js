@@ -15,7 +15,6 @@ window.addEventListener('scroll', (e) => {
   else {
     nav.classList.remove('hide')
   }
-  console.log(pos - scrollPos)
   scrollPos = pos
 })
 

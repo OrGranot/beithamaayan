@@ -335,13 +335,23 @@ header {
 .hero {
   --container-size: 2rem;
   margin-top: calc(var(--header-height));
-  min-height: calc(100dvh - var(--header-height));
+  min-height: calc(100dvh - var(--header-height) - 1rem);
+
+  @media(min-width: 72.5rem) {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+  }
 
   img {
     max-height: calc(100dvh - var(--header-height));
     min-height: calc((100dvh - var(--header-height)) / 2);
     width: 100%;
     object-fit: cover;
+
+    @media(min-width: 72.5rem) {
+      // width: 60%;
+      height: 100%;
+    }
   }
   &_text {
     padding-block: 5rem;
@@ -349,13 +359,22 @@ header {
     text-align: center;
     font-size: var(--fs-500);
 
+    @media(min-width: 72.5rem) {
+      --container-size: 5em;
+      justify-content: center;
+    }
+
   h2 {
     font-size: inherit;
   }
  }
 
  .btn {
-  font-size: var(--fs-300)
+  font-size: var(--fs-300);
+
+  @media(min-width: 72.5rem) {
+    display: none;
+  }
  }
 }
 
@@ -462,6 +481,9 @@ header {
       flex-basis: 20rem;
       min-width: fit-content;
 
+      &:hover, :focus-visible {
+        scale: 1.05;
+      }
 
       @media(min-width: 72.5rem) {
 
@@ -717,6 +739,7 @@ header {
         }
         &::after {
           right: -10vw;
+          left: -5vw;
 
         }
       }
@@ -759,7 +782,6 @@ header {
 
   .quote_name {
     text-align: end;
-    padding-block-end: 1.5rem;
     font-size: var(--fs-300);
     font-weight: var(--fw-900);
     align-self: flex-end;
@@ -770,6 +792,7 @@ header {
     margin-inline: auto;
     justify-content: space-evenly;
     font-size: var(--fs-500);
+    margin-block: 4rem;
   }
 
   &_form {
