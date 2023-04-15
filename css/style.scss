@@ -18,7 +18,7 @@
 
 :root {
 
-  --header-height: 5rem;
+  --header-height: 5.5rem;
 
   --clr-hex-primary: 227, 100%, 17%;
   --clr-hex-secondary: 0, 79%, 28%;
@@ -214,14 +214,15 @@ header {
   right: 0;
   left: 0;
   z-index: 1;
-  max-height: var(--header-height, 5rem);
+  // max-height: var(--header-height, 5rem);
   justify-content: space-between;
-  padding-block: 0.5em;
+  padding-block: 0.8em;
   color: var(--clr-secondary);
   transition: scale 450ms,
               opacity 450ms,
               max-height 350ms ;
   transform-origin: top;
+
 
   &.open {
     height: 100%;
@@ -336,10 +337,9 @@ header {
   --container-size: 2rem;
   margin-top: calc(var(--header-height));
   min-height: calc(100dvh - var(--header-height) - 1rem);
-
+  position: relative;
   @media(min-width: 72.5rem) {
-    display: grid;
-    grid-template-columns: 3fr 2fr;
+    // display: flex;
   }
 
   img {
@@ -349,9 +349,13 @@ header {
     object-fit: cover;
 
     @media(min-width: 72.5rem) {
-      // width: 60%;
       height: 100%;
     }
+  }
+  .inner-glow {
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+    overflow: hidden;
   }
   &_text {
     padding-block: 5rem;
@@ -359,9 +363,18 @@ header {
     text-align: center;
     font-size: var(--fs-500);
 
+
     @media(min-width: 72.5rem) {
-      --container-size: 5em;
+      position: absolute;
+      --container-size: 2em;
       justify-content: center;
+      left: -10vw;
+      top: 0;
+      bottom: 0;
+      width: 30%;
+      opacity: 0;
+      background-color: white;
+      // translate: -150% 0;
     }
 
   h2 {
@@ -393,6 +406,7 @@ header {
 
 .about {
   position: relative;
+  padding-block: 5rem;
 
   @media(min-width: 72.5rem) {
 
@@ -435,7 +449,7 @@ header {
       transform: rotate(0);
       grid-column: 1 / 2;
       grid-row: 1 / -1;
-      top: 0;
+      top: -5rem;
     }
   }
   .quote {
@@ -713,7 +727,7 @@ header {
         margin-inline-start: auto;
 
         &::after {
-          left: -10vw;
+          left: -5vw;
         }
       }
       h2 {
