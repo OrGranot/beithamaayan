@@ -86,7 +86,7 @@
 }
 
 .container {
-    padding-inline: var(--container-size, 1rem);
+    padding-inline: var(--container-size, 5vw);
     margin-inline: auto;
 }
 
@@ -632,9 +632,12 @@ header {
   }
 
   p {
+    &:first-of-type {
+      margin-block-start: 2rem;
+    }
+
     margin-inline: auto;
     margin-block-end: 1rem;
-    margin-block-start: 3rem;
   }
   &.kindergardens {
     margin-block-start: 2rem;
@@ -673,6 +676,7 @@ header {
       .section_header {
         &::after {
           left: 15%;
+          right: -10vw;
         }
       }
       h2 {
@@ -687,7 +691,7 @@ header {
         margin-inline-start: auto;
 
         &::after {
-          left: calc(var(--container-size, 1rem) * -1);
+          left: -10vw;
         }
       }
       h2 {
@@ -712,8 +716,8 @@ header {
           width: 90%;
         }
         &::after {
-          left: calc(var(--container-size, 1rem) * -1);
-          bottom: 10%;
+          right: -10vw;
+
         }
       }
 
