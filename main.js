@@ -5,6 +5,8 @@ import { gsap } from "gsap";
 const nav = document.querySelector('header')
 const menuToggle = document.querySelector('.menu-toggle')
 const header = document.querySelector('header')
+const readMore = document.querySelector('.read-more .btn')
+
 
 let scrollPos = 0
 
@@ -24,6 +26,26 @@ window.addEventListener('scroll', (e) => {
 menuToggle.addEventListener('click', () => {
   header.classList.toggle('open')
 })
+
+readMore.addEventListener('click', () => {
+  const schoolSec = document.querySelector('.school')
+
+  if (!schoolSec.classList.contains('open')) {
+    schoolSec.classList.add('open')
+    readMore.innerText="קרא פחות"
+  } else {
+    schoolSec.classList.remove('open')
+    schoolSec.scrollIntoView()
+    readMore.innerText="קרא עוד"
+  }
+})
+
+
+
+
+
+
+
 
 const hero = gsap.timeline({defaults: { duration: 1 }})
 const video = gsap.timeline()

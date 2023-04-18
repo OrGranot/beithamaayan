@@ -669,7 +669,6 @@ header {
       position: absolute;
       z-index: -1;
       inset: calc(var(--container-size, 1rem) * -1) calc(var(--container-size, 1rem) * -5);
-      // height: 80%;
       box-shadow: 0 0 10px 5px rgb(white, 1) inset;
     }
   }
@@ -693,16 +692,15 @@ header {
     }
   }
   h2 {
-    // margin-block-end: 0.5rem;
     color: var(--clr-secondary);
     padding-block: 0.15em;
     font-size: var(--fs-700);
   }
 
   p {
-    // margin-inline: auto;
     margin-block-end: 1rem;
   }
+
   &.kindergardens {
     margin-block-start: 2rem;
 
@@ -710,9 +708,15 @@ header {
       flex-direction: column;
     }
   }
+
   &.school {
-    // max-height: 40rem;
+    max-height: 44rem;
     overflow-y: hidden;
+    // transition: max-height 700ms;
+    &.open {
+      max-height: 100%;
+      // height: 100%;
+    }
     h3 {
       margin-block-start: 3rem;
       margin-block-end: 0.5em;
@@ -723,7 +727,6 @@ header {
     }
     .case_cards {
       display: flex;
-      // flex-direction: column;
       justify-content: center;
       align-items: center;
       gap: 2rem;
@@ -731,14 +734,12 @@ header {
     .d-flex {
       --gap: 3rem;
       justify-content: center;
-      // align-items: flex-start;
       flex-direction: row-reverse;
 
       &.column {
         flex-direction: column;
       }
     }
-
   }
   &.kindergardens .section_header:after {
     background-image: url('../assets/wallpapers/light-background.jpg');
@@ -752,12 +753,6 @@ header {
 
   &_cards {
     justify-content: center;
-    // margin-block: 1.5rem;
-    // flex: 1;
-    @media(min-width: 87.5rem) {
-      // flex-direction: column;
-     }
-
   }
   .card {
     width: 80%;
@@ -782,7 +777,6 @@ header {
     &.kindergardens {
       .section_header {
         &::after {
-          // left: 0%;
           right: -10vw;
           top: -1em;
           bottom: -1em;
@@ -790,23 +784,20 @@ header {
       }
       h2 {
         text-align: start;
-        // margin-block-start:2rem;
         padding-inline-start: 40vw;
         padding-inline-end: 3rem;
       }
 
       .case_content {
         flex-direction: row-reverse;
-        // gap: 3em;
       }
 
       .case_cards {
-        // flex-direction: column;
-
         .card {
           width: 100%;
         }
       }
+
       p {
         max-width: 50ch;
         margin-inline: 0;
@@ -822,25 +813,13 @@ header {
       }
       h2 {
         text-align: start;
-        // margin-block-start: 2rem;
         padding-inline: 2rem;
         padding-inline-end: 40vw;
 
       }
-      // .case_cards {
-      //   margin-inline-end: 5vw;
-
-      // }
     }
     &.organization {
-      // display: grid;
-      // grid-template-columns: 1fr 3fr;
       .section_header {
-        // flex-direction: column;
-
-        .case_cards {
-          // flex-direction: column;
-        }
         .card {
           width: 90%;
         }
@@ -863,6 +842,14 @@ header {
     }
   }
 
+}
+
+.read-more {
+  display: flex;
+  margin-block: 1em;
+  .btn {
+    margin-inline: auto;
+  }
 }
 
 
