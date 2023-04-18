@@ -6,6 +6,8 @@ const nav = document.querySelector('header')
 const menuToggle = document.querySelector('.menu-toggle')
 const header = document.querySelector('header')
 const readMore = document.querySelector('.read-more .btn')
+const links = document.querySelectorAll('a')
+let clicked = false
 
 
 let scrollPos = 0
