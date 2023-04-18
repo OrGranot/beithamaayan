@@ -660,13 +660,15 @@ header {
 
 .case {
   text-align: center;
+  overflow-x: hidden;
+
   .section_header {
     position: relative;
     &:after {
       content: "";
       position: absolute;
       z-index: -1;
-      inset: calc(var(--container-size, 1rem) * -1) calc(var(--container-size, 1rem) * -2);
+      inset: calc(var(--container-size, 1rem) * -1) calc(var(--container-size, 1rem) * -5);
       // height: 80%;
       box-shadow: 0 0 10px 5px rgb(white, 1) inset;
     }
@@ -675,6 +677,20 @@ header {
   .case_content {
     justify-content: center;
     margin-block-start: 3rem;
+
+    @media(min-width: 72.5rem) {
+      text-align: start;
+    }
+
+    @media(min-width: 87.5rem) {
+      gap: 5rem;
+    }
+  }
+
+  .case_cards {
+    img {
+      object-position: 50% 20%;
+    }
   }
   h2 {
     // margin-block-end: 0.5rem;
@@ -684,15 +700,45 @@ header {
   }
 
   p {
-    &:first-of-type {
-      margin-block-start: 2rem;
-    }
-
-    margin-inline: auto;
+    // margin-inline: auto;
     margin-block-end: 1rem;
   }
   &.kindergardens {
     margin-block-start: 2rem;
+
+    .case_cards {
+      flex-direction: column;
+    }
+  }
+  &.school {
+    // max-height: 40rem;
+    overflow-y: hidden;
+    h3 {
+      margin-block-start: 3rem;
+      margin-block-end: 0.5em;
+      color: var(--clr-primary);
+      font-size: var(--fs-700);
+      font-family: var(--ff-secondary);
+      text-align: center;
+    }
+    .case_cards {
+      display: flex;
+      // flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
+    .d-flex {
+      --gap: 3rem;
+      justify-content: center;
+      // align-items: flex-start;
+      flex-direction: row-reverse;
+
+      &.column {
+        flex-direction: column;
+      }
+    }
+
   }
   &.kindergardens .section_header:after {
     background-image: url('../assets/wallpapers/light-background.jpg');
@@ -706,18 +752,27 @@ header {
 
   &_cards {
     justify-content: center;
-    margin-block: 1.5rem;
+    // margin-block: 1.5rem;
+    // flex: 1;
+    @media(min-width: 87.5rem) {
+      // flex-direction: column;
+     }
+
   }
   .card {
-    width: 45%;
-    max-width: 20rem;
+    width: 80%;
     aspect-ratio: 16/9;
     object-fit: cover;
+
+    @media(min-width: 72.5rem) {
+      max-width: 30rem;
+
+    }
   }
 
   @media(min-width: 72.5rem) {
     .card {
-      width: 70%;
+      width: 100%;
     }
     .section_header {
       display: flex;
@@ -742,11 +797,11 @@ header {
 
       .case_content {
         flex-direction: row-reverse;
-
-        gap: 3em;
+        // gap: 3em;
       }
+
       .case_cards {
-        flex-direction: column;
+        // flex-direction: column;
 
         .card {
           width: 100%;
@@ -772,36 +827,37 @@ header {
         padding-inline-end: 40vw;
 
       }
-      .case_cards {
-        margin-inline-end: 5vw;
-      }
+      // .case_cards {
+      //   margin-inline-end: 5vw;
+
+      // }
     }
     &.organization {
-      display: grid;
-      grid-template-columns: 1fr 3fr;
+      // display: grid;
+      // grid-template-columns: 1fr 3fr;
       .section_header {
-        flex-direction: column;
+        // flex-direction: column;
 
         .case_cards {
-          flex-direction: column;
+          // flex-direction: column;
         }
         .card {
           width: 90%;
         }
         &::after {
+          left: 0%;
           right: -10vw;
-          left: -5vw;
-
+          top: -1em;
+          bottom: -1em;
         }
       }
 
       h2 {
         text-align: center;
-        margin-block-start: 2rem;
-        padding-inline: 2rem;
+        padding-inline-start: 20vw;
+        padding-inline-end: 3rem;
       }
       p {
-        padding-inline: 6rem;
         padding-block: 3rem;
       }
     }
