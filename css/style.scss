@@ -693,13 +693,15 @@ header {
       p {
         margin-block-end: 0;
       }
-      .expandable {
-        display: none;
-      }
-
-      &.expand {
+      @media(max-width: 72.4rem) {
         .expandable {
-          display: flex;
+          display: none;
+        }
+
+        &.expand {
+          .expandable {
+            display: flex;
+          }
         }
       }
 
@@ -714,7 +716,9 @@ header {
         text-decoration: underline;
         color: hsl(var(--clr-hex-primary), 0.6);
         cursor: pointer;
-
+        @media(min-width: 72.5rem) {
+          display: none
+        }
         &:hover {
           color: hsl(var(--clr-hex-primary), 0.9);
         }
@@ -772,6 +776,7 @@ header {
 
       @media(min-width: 72.5rem) {
         --gap: 3rem;
+        justify-content: center;
       }
       justify-content: start;
       flex-direction: row-reverse;
