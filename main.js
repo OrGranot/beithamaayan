@@ -29,23 +29,36 @@ menuToggle.addEventListener('click', () => {
   header.classList.toggle('open')
 })
 
-readMore.addEventListener('click', () => {
-  const schoolSec = document.querySelector('.school')
+// readMore.addEventListener('click', () => {
+//   const schoolSec = document.querySelector('.school')
 
-  if (!schoolSec.classList.contains('open')) {
-    schoolSec.classList.add('open')
-    readMore.innerText="קרא פחות"
-  } else {
-    schoolSec.classList.remove('open')
-    schoolSec.scrollIntoView()
-    readMore.innerText="קרא עוד"
-  }
+//   if (!schoolSec.classList.contains('open')) {
+//     schoolSec.classList.add('open')
+//     readMore.innerText="קרא פחות"
+//   } else {
+//     schoolSec.classList.remove('open')
+//     schoolSec.scrollIntoView()
+//     readMore.innerText="קרא עוד"
+//   }
+// })
+
+
+
+
+const expandBtns = document.querySelectorAll('.toggle-expand')
+expandBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const content = btn.closest('.school_section')
+
+    if (!content.classList.contains('expand')) {
+      content.classList.add('expand')
+      btn.innerText = 'קרא פחות'
+    } else {
+      content.classList.remove('expand')
+      btn.innerText = 'קרא עוד'
+    }
+  })
 })
-
-
-
-
-
 
 
 

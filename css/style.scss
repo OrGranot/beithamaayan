@@ -685,6 +685,42 @@ header {
     @media(min-width: 87.5rem) {
       gap: 5rem;
     }
+
+    .school_section {
+      position: relative;
+      // padding-block: 0.5rem;
+      text-align: start;
+      p {
+        margin-block-end: 0;
+      }
+      .expandable {
+        display: none;
+      }
+
+      &.expand {
+        .expandable {
+          display: flex;
+        }
+      }
+
+      .toggle-expand {
+        position: absolute;
+        bottom: -1.75em;
+        right: 0;
+        font-size: 0.85em;
+        padding: 0;
+        background-color: transparent;
+        border: none;
+        text-decoration: underline;
+        color: hsl(var(--clr-hex-primary), 0.6);
+        cursor: pointer;
+
+        &:hover {
+          color: hsl(var(--clr-hex-primary), 0.9);
+        }
+      }
+    }
+
   }
 
   .case_cards {
@@ -711,30 +747,33 @@ header {
   }
 
   &.school {
-    max-height: 44rem;
     overflow-y: hidden;
-    // transition: max-height 700ms;
-    &.open {
-      max-height: 100%;
-      // height: 100%;
-    }
+
     h3 {
       margin-block-start: 3rem;
-      margin-block-end: 0.5em;
+      // margin-block-end: 0.5em;
       color: var(--clr-primary);
       font-size: var(--fs-700);
       font-family: var(--ff-secondary);
       text-align: center;
+
+      // @media(min-width: 72.5rem) {
+      //   margin-block-start: 3rem;
+      // }
     }
     .case_cards {
       display: flex;
-      justify-content: center;
+      justify-content: center !important;
       align-items: center;
       gap: 2rem;
     }
     .d-flex {
-      --gap: 3rem;
-      justify-content: center;
+      --gap: 1rem;
+
+      @media(min-width: 72.5rem) {
+        --gap: 3rem;
+      }
+      justify-content: start;
       flex-direction: row-reverse;
 
       &.column {
@@ -845,13 +884,13 @@ header {
 
 }
 
-.read-more {
-  display: flex;
-  margin-block: 1em;
-  .btn {
-    margin-inline: auto;
-  }
-}
+// .read-more {
+//   display: flex;
+//   margin-block: 1em;
+//   .btn {
+//     margin-inline: auto;
+//   }
+// }
 
 
 
@@ -968,7 +1007,6 @@ footer {
   }
 
   ul {
-    // --container-size: 4rem;
     padding: 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
