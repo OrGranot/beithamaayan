@@ -2,12 +2,9 @@ import './css/reset.scss';
 import './css/style.scss';
 import { gsap } from "gsap";
 
-const nav = document.querySelector('header')
 const menuToggle = document.querySelector('.menu-toggle')
 const header = document.querySelector('header')
-const readMore = document.querySelector('.read-more .btn')
-const links = document.querySelectorAll('a')
-let clicked = false
+
 
 
 let scrollPos = 0
@@ -15,11 +12,13 @@ let scrollPos = 0
 
 window.addEventListener('scroll', (e) => {
   const pos = window.pageYOffset
+
   if (pos - scrollPos > 0) {
-    nav.classList.add('hide')
+    header.classList.add('hide')
   }
   else {
-    nav.classList.remove('hide')
+    header.classList.remove('hide')
+    header.classList.remove('open')
   }
   scrollPos = pos
 })
@@ -28,6 +27,8 @@ window.addEventListener('scroll', (e) => {
 menuToggle.addEventListener('click', () => {
   header.classList.toggle('open')
 })
+
+
 
 // readMore.addEventListener('click', () => {
 //   const schoolSec = document.querySelector('.school')
