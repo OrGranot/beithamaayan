@@ -104,13 +104,14 @@ let scrollPos = 0
 window.addEventListener('scroll', (e) => {
   const pos = window.pageYOffset
 
-  if (pos - scrollPos > 0) {
+  if (pos - scrollPos >= 0) {
     header.classList.add('hide')
   }
   else {
     header.classList.remove('hide')
     header.classList.remove('open')
   }
+  console.log(pos -scrollPos)
   scrollPos = pos
 })
 
