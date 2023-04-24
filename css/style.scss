@@ -433,6 +433,22 @@ header {
     }
   }
 
+  quote {
+    position: relative;
+    &::before {
+      content: open-quote;
+      position: absolute;
+      // background-color: red;
+      top: -0.2em;
+      right: -0.25em;
+      // width: 2em;
+      // height: 2em;
+      font-size: 7em;
+      color: hsl(var(--clr-hex-secondary), 0.1);
+      line-height: 1;
+    }
+  }
+
   &::after {
     content: '';
     position: absolute;

@@ -28,6 +28,7 @@
       </a>
       <nav>
         <ul role="list" class="d-flex">
+          <a class="nav-link" href="#"><li>דף בית</li></a>
           <a class="nav-link" href="#kindergardens"><li>גנים</li></a>
           <a class="nav-link" href="#school"><li>בית ספר</li></a>
           <a class="nav-link" href="#organization"><li>עמותת מתיישבים עם הסביבה</li></a>
@@ -56,11 +57,11 @@
   <section class="about">
     <div class="quote">
       <quote>
-        "אמר האדם הפוקח עיניו: <span></span>
-        עושרו של עולם מה נפלא ומה רב-<span></span>
+        אמר האדם הפוקח עיניו: <br />
+        עושרו של עולם מה נפלא ומה רב-
         בוקר בוקר נלכד בלבי כברשת העולם ומלואו,
         המצולה היבשת, ואורות וצללים וחגים וחולין,
-        ומילים וצלילים ושדות שיבולים וכל צבעי הקשת”
+        ומילים וצלילים ושדות שיבולים וכל צבעי הקשת
         <p class="quote_name">לאה גולדברג</p>
       </quote>
     </div>
@@ -365,7 +366,7 @@
       </p>
     </div>
   </section>
-  <section class="contact background-yellow container" id="contact-form">
+  <section class="contact background-yellow container">
     <div class="contact_text d-flex flex-column">
       <p class="quote text-primary">
         כל חינוך הוא חינוך עצמי,<span></span>
@@ -388,7 +389,7 @@
         <div class="form-inputs d-flex flex-column text-secondary">
           <div class="form-group">
             <label for="name">שם</label>
-            <input type="text" name="name" required>
+            <input type="text" name="name" required id="contact-form">
           </div>
           <div class="form-group">
             <label for="phone">טלפון</label>
@@ -408,7 +409,7 @@
   <footer class="footer" id="footer">
     <div class="footer_wrapper d-flex">
       <div class="footer_logo">
-        <img src="./assets/wallpapers/logo.jpg" alt="לוגו בית המעיין">
+        <img src="./assets/wallpapers/logo.jpg" alt="לוגו בית המעיין" data-open="false">
         <p class="text-primary"><span>©</span>בית המעיין 2023</p>
       </div>
       <ul role="list">
@@ -426,7 +427,7 @@
   </footer>
 
   <!-- The Modal -->
-  <div id="myModal" class="modal">
+  <div id="photoModal" class="modal">
 
     <!-- Modal content -->
     <div class="modal-content">

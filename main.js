@@ -81,7 +81,7 @@ mm.add("(min-width: 72.5rem)", () => {
 
 
 
-const modal = document.getElementById("myModal");
+const modal = document.getElementById("photoModal");
 const closeBtn = modal.querySelector('.close');
 const images = document.querySelectorAll('img')
 
