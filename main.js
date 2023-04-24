@@ -1,6 +1,97 @@
 import './css/reset.scss';
 import './css/style.scss';
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+/** GSAP **/
+
+
+
+let mm = gsap.matchMedia();
+
+mm.add("(min-width: 72.5rem)", () => {
+
+  const hero = gsap.timeline({defaults: { duration: 1 }})
+  hero
+  // .to('.inner-glow img', {scale: 1.6, objectPosition: '0%', delay: 1})
+  .to('.hero .inner-glow img', {scale: 1.5, delay: 0.5 })
+  .fromTo('.hero .inner-glow img', {objectPosition: '0%'}, {objectPosition: '100%', duration: 2})
+  .to('.hero .inner-glow img', {objectPosition: '50%', duration: 2})
+  .to('.hero .inner-glow', {width: '65%', duration: 2 }, '-=2')
+  .to('.hero_text', {top: 0, duration: 1, alpha: 1}, '-=0.5');
+
+
+  const about = gsap.timeline({
+      // yes, we can add it to an entire timeline!
+      scrollTrigger: {
+        trigger: ".about",
+        // pin: true,   // pin the trigger element while active
+        start: "0% 40%",
+        end: "10% 20%",
+        scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+      }
+    });
+
+    about
+      .from('.about_text', {alpha: 0, scale: 0.4, duration: 1})
+      .from('.about_cards .card', {alpha: 0, y: '2em', duration: 1, stagger: 1})
+      // .to('iframe', {alpha: 0, scale: 0.4, duration: 1}, '+=2')
+
+
+
+
+  const video = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".video",
+        start: "0% 90%",
+        end: "50% 20%",
+        scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+      }
+    });
+
+    video
+          .from('.video h2', {alpha: 0, scale: 0.2})
+
+
+    // const caseSection = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: ".case",
+    //     start: "top 30%",
+    //     end: "+=200",
+    //     scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+    //     markers: true
+    //   }
+    // });
+
+    // caseSection
+    //           .from('.case img', {stagger: 1, translateX: '150%', duration: 10,alpha: 0, delay: 1.5})
+
+
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** MENU **/
+
 
 const menuToggle = document.querySelector('.menu-toggle')
 const header = document.querySelector('header')
@@ -29,22 +120,7 @@ menuToggle.addEventListener('click', () => {
 })
 
 
-
-// readMore.addEventListener('click', () => {
-//   const schoolSec = document.querySelector('.school')
-
-//   if (!schoolSec.classList.contains('open')) {
-//     schoolSec.classList.add('open')
-//     readMore.innerText="קרא פחות"
-//   } else {
-//     schoolSec.classList.remove('open')
-//     schoolSec.scrollIntoView()
-//     readMore.innerText="קרא עוד"
-//   }
-// })
-
-
-
+/** EXPANDABLES **/
 
 const expandBtns = document.querySelectorAll('.toggle-expand')
 expandBtns.forEach(btn => {
@@ -63,23 +139,15 @@ expandBtns.forEach(btn => {
 
 
 
-const hero = gsap.timeline({defaults: { duration: 1 }})
-const video = gsap.timeline()
 
 
-let mm = gsap.matchMedia();
-
-mm.add("(min-width: 72.5rem)", () => {
-  hero
-  // .to('.inner-glow img', {scale: 1.6, objectPosition: '0%', delay: 1})
-  .to('.hero .inner-glow img', {scale: 1.5, delay: 0.5 })
-  .fromTo('.hero .inner-glow img', {objectPosition: '0%'}, {objectPosition: '100%', duration: 2})
-  .to('.hero .inner-glow img', {objectPosition: '50%', duration: 2})
-  .to('.hero .inner-glow', {width: '65%', duration: 2 }, '-=2')
-  .to('.hero_text', {top: 0, duration: 1, alpha: 1}, '-=0.5');
-});
 
 
+
+
+
+
+/** MODAL **/
 
 const modal = document.getElementById("photoModal");
 const closeBtn = modal.querySelector('.close');
@@ -113,11 +181,6 @@ function openMoadal(e) {
 }
 
 function closeModal() {
-  modal.style.display = "none";
-}
-
-// When the user clicks on <closeBtn> (x), close the modal
-closeBtn.onclick = function() {
   modal.style.display = "none";
 }
 

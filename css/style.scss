@@ -17,6 +17,7 @@
 }
 
 :root {
+  color-scheme: light;
 
   --header-height: 5.5rem;
 
@@ -28,7 +29,9 @@
   --clr-secondary: hsl(0, 79%, 28%);
   --clr-accent: hsl(33, 81%, 44%);
 
-
+  @media(prefers-color-scheme: dark) {
+    --clr-primary: hsl(0, 0%, 100%);
+  }
 
 
   --fs-200: 0.7rem;
@@ -443,7 +446,17 @@ header {
       right: -0.25em;
       // width: 2em;
       // height: 2em;
-      font-size: 7em;
+      font-size: 15em;
+      color: hsl(var(--clr-hex-secondary), 0.15);
+      line-height: 1;
+    }
+
+    &::after {
+      content: close-quote;
+      position: absolute;
+      bottom: -0.05em;
+      left: 0.2em;
+      font-size: 5em;
       color: hsl(var(--clr-hex-secondary), 0.1);
       line-height: 1;
     }
@@ -570,7 +583,6 @@ header {
 
       grid-template-columns: repeat(6, 1fr);
       grid-template-rows: repeat(11, 1fr);
-
 
       .card:nth-child(2) {
         grid-column: 1 / span 3;
@@ -940,11 +952,21 @@ header {
       position: absolute;
       // background-color: red;
       top: -0.2em;
-      right: -0.35em;
+      right: -0.25em;
       // width: 2em;
       // height: 2em;
-      font-size: 7em;
-      color: hsl(var(--clr-hex-primary), 0.1);
+      font-size: 10em;
+      color: hsl(var(--clr-hex-primary), 0.15);
+      line-height: 1;
+    }
+    &::after {
+      content: close-quote;
+      position: absolute;
+      bottom: -0.55em;
+      right: 1em;
+      rotate: -3deg;
+      font-size: 3em;
+      color: hsl(var(--clr-hex-secondary), 0.1);
       line-height: 1;
     }
   }
