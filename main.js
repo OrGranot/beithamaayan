@@ -154,10 +154,11 @@ const closeBtn = modal.querySelector('.close');
 const images = document.querySelectorAll('img')
 
 images.forEach(img => {
-  img.setAttribute('tabindex', 0)
   if (img.dataset.open == "false") {
     return
   }
+  img.setAttribute('tabindex', 0)
+  img.style.setProperty('cursor', 'pointer')
   img.addEventListener('click', (e) => {
   openMoadal(e)
   })
