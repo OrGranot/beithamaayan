@@ -1,19 +1,19 @@
 @font-face {
   font-family: 'Hillel';
-  src: url('./assets/fonts/Hillel-CLM-Medium.ttf');
   font-weight: 400;
+  src: url('../assets/fonts/Hillel-CLM-Medium.ttf');
 }
 
 @font-face {
   font-family: 'Yehuda';
-  src: url('./assets/fonts/Yehuda-CLM-Light.ttf');
   font-weight: 400;
+  src: url('../assets/fonts/Yehuda-CLM-Light.ttf');
 }
 
 @font-face {
   font-family: 'Yehuda';
-  src: url('./assets/fonts/Yehuda-CLM-Bold.ttf');
   font-weight: 900;
+  src: url('../assets/fonts/Yehuda-CLM-Bold.ttf');
 }
 
 :root {
@@ -689,7 +689,7 @@ header {
     .school_section {
       position: relative;
       // padding-block: 0.5rem;
-      text-align: start;
+      // text-align: start;
       p {
         margin-block-end: 0;
       }
@@ -708,7 +708,7 @@ header {
       .toggle-expand {
         position: absolute;
         bottom: -1.75em;
-        right: 0;
+        right: 1em;
         font-size: 0.85em;
         padding: 0;
         background-color: transparent;
