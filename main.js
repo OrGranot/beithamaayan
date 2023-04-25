@@ -18,7 +18,7 @@ mm.add("(min-width: 72.5rem)", () => {
   // .to('.inner-glow img', {scale: 1.6, objectPosition: '0%', delay: 1})
   .to('.hero .inner-glow img', {scale: 1.5, delay: 0.5 })
   .fromTo('.hero .inner-glow img', {objectPosition: '0%'}, {objectPosition: '100%', duration: 2})
-  .to('.hero .inner-glow img', {objectPosition: '50%', duration: 2})
+  .to('.hero .inner-glow img', {objectPosition: '50%', duration: 2}, '-=2')
   .to('.hero .inner-glow', {width: '65%', duration: 2 }, '-=2')
   .to('.hero_text', {top: 0, duration: 1, alpha: 1}, '-=0.5');
 
@@ -173,6 +173,8 @@ images.forEach(img => {
     openMoadal(e)
   })
 })
+
+closeBtn.addEventListener('click', closeModal)
 
 function openMoadal(e) {
   modal.querySelector('img').src = e.target.src
