@@ -76,6 +76,14 @@
 }
 
 /** UTILITIES **/
+
+.font-bold {
+  font-weight: var(--fw-900);
+}
+.font-neutral {
+  font-weight: var(--fw-400);
+}
+
 .d-flex {
   display: flex;
   align-items: center;
@@ -721,6 +729,11 @@ header {
       // text-align: start;
       p {
         margin-block-end: 0;
+        font-weight: var(--fw-900);
+
+        span {
+          font-weight: var(--fw-400);
+        }
       }
       @media(max-width: 72.4rem) {
         .expandable {
