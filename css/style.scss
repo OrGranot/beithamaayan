@@ -298,7 +298,7 @@ header {
   }
 
   nav {
-    --gap: var(--fs-500);
+    --gap: var(--fs-400);
     display: none;
 
     ul {
@@ -308,13 +308,20 @@ header {
     }
     li {
       transition: scale 350ms;
+      display: flex;
+      align-items: center;
+      gap: 0.3em;
     }
     a {
+      line-height: 1;
       color: inherit;
+
     }
     li:hover {
       scale: 1.1;
     }
+
+
 
     @media(min-width: 64rem) {
       font-size: var(--fs-200);
@@ -328,6 +335,7 @@ header {
       align-self: center;
       padding-inline: 1.5em;
     }
+
   }
 
   .menu-toggle {

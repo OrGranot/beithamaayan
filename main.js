@@ -1,5 +1,7 @@
 import './css/reset.scss';
 import './css/style.scss';
+import '@fortawesome/fontawesome-free/css/all.css';
+
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 

@@ -13,6 +13,7 @@
     "vite": "^4.2.0"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.4.0",
     "gsap": "^3.11.5",
     "scrolltrigger": "^1.0.1"
   }
