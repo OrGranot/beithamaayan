@@ -997,7 +997,7 @@ header {
 
     @media(min-width: 72.5rem) {
       --gap: 1em;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 0.8fr 1fr;
       max-width: 60rem;
     }
 
@@ -1011,10 +1011,17 @@ header {
 
     .form-group {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      // gap: 1em;
+      grid-template-columns: 0.75fr repeat(4, 1fr);
+
       input, textarea {
         grid-column: 2 / -1;
+        padding: 0.4em;
+        color: inherit;
+        font-size: var(--fs-400);
+        line-height: 1;
+        background-color: rgb(white, 0.6);
+        border: 2px solid hsl(var(--clr-hex-accent), 0.4);
+        border-radius: 5px;
       }
     }
 
@@ -1034,11 +1041,7 @@ header {
       display: flex;
       flex-direction: column;
       gap: 0.25em;
-
-      textarea {
-        flex: 1;
-      }
-        grid-column: 1/-1;
+      grid-column: 1/-1;
       }
     }
 
