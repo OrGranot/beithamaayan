@@ -1013,8 +1013,17 @@ header {
       display: grid;
       grid-template-columns: 0.75fr repeat(4, 1fr);
 
+      label {
+        // transform: translateX(-100%);
+      }
+
       input, textarea {
-        grid-column: 2 / -1;
+        grid-column: 1 / -1;
+
+        @media(min-width: 72.5rem) {
+          grid-column: 2 / -1;
+
+        }
         padding: 0.4em;
         color: inherit;
         font-size: var(--fs-400);
@@ -1027,7 +1036,7 @@ header {
 
 
     button {
-      width: 30%;
+
       margin-inline: auto;
 
       @media(min-width: 72.5rem) {
@@ -1044,49 +1053,6 @@ header {
       grid-column: 1/-1;
       }
     }
-
-
-
-
-    // padding-block-end: 2rem;
-    // flex: 1;
-
-    // display: grid;
-    // grid-template-columns: 1fr 1fr;
-
-    // .form_message {
-    //   grid-column: span 2;
-    // }
-
-    // .form-inputs {
-    //   --gap: 0.3em;
-    //   align-items: flex-end;
-
-    //   .form-group {
-    //     display: flex;
-    //     align-items: center;
-    //     gap: 0.5em;
-
-    //     label {
-    //       min-width: 2.5rem;
-    //       font-weight: var(--fw-900);
-    //       font-size: var(--fs-300);
-    //     }
-    //     input {
-    //       flex: 1;
-    //       border-radius: 5px;
-    //       border: 1px solid var(--clr-secondary);
-    //     }
-    //   }
-    // }
-
-    // .btn {
-    //   align-self: flex-end;
-    //   font-size: var(--fs-300);
-    // }
-
-
-
   }
 
   &_details {
