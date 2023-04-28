@@ -420,7 +420,14 @@ header {
 
 .video {
   text-align: center;
-  // min-height: 100vh;
+
+  &.fade-in {
+    iframe {
+      scale: 0.2;
+      filter: blur(0.5);
+      opacity: 0.6;
+    }
+  }
 
   h2 {
     margin-block-end: 0.5em;
@@ -429,6 +436,12 @@ header {
   iframe {
     width: 90%;
     aspect-ratio: 16/9;
+    filter: blur(0.5);
+    opacity: 1;
+    transform-origin: top;
+    transition: scale 1500ms,
+                blur 1500ms,
+                opacity 1500ms;
   }
 }
 
@@ -530,8 +543,17 @@ header {
 
   &_text {
     --container-size: 2rem;
+
     text-align: center;
     padding-block-start: 3rem;
+    transition: translate 1500ms, opacity 1500ms;
+
+    &.fade-in {
+      opacity: 0;
+      translate: 0% 50%;
+
+    }
+
     p {
       max-width: 45ch;
       margin-inline: auto;
@@ -545,6 +567,7 @@ header {
     padding-block: 3rem;
     align-items: stretch;
     justify-content: center;
+
 
     .card {
       flex-basis: 20rem;
@@ -714,8 +737,44 @@ header {
 }
 
 .case {
-  // text-align: center;
   overflow-x: hidden;
+
+
+  .section_header {
+    transition: translate 2000ms;
+    transform-origin: right;
+  }
+  p {
+    transition: translate 1500ms 400ms, opacity 1500ms 400ms;
+  }
+
+
+  &.fade-in {
+
+    @media(min-width: 72.5rem) {
+      .section_header {
+          translate: 120% 0;
+        }
+
+        &.school {
+          .section_header {
+            translate: -100% 0;
+          }
+        }
+
+        &.organization {
+          .section_header {
+            translate: 100% 0;
+          }
+        }
+    }
+
+
+    p {
+      translate: 0 50%;
+      opacity: 0;
+    }
+  }
 
   .section_header {
     position: relative;
@@ -1092,10 +1151,14 @@ header {
     margin-block-end: 4rem;
     margin-inline: auto;
 
+    p {
+      font-family: var(--ff-secondary);
+    }
     span {
       position: relative;
       font-family: 'Sigmar', cursive;
       letter-spacing: 2px;
+      font-size: 0.8em;
       cursor: pointer;
 
       &::after {
@@ -1104,8 +1167,8 @@ header {
         opacity: 0;
         position: absolute;
         font-size: var(--fs-200);
-        left: 10%;
-        top: -70%;
+        left: -10%;
+        top: -90%;
         padding: 0.2em 0.5em;
         background-color: hsl(var(--clr-hex-accent), 0.6);
         border-radius: 5px;
