@@ -149,11 +149,6 @@ expandBtns.forEach(btn => {
 
 
 
-
-
-
-
-
 /** MODAL **/
 
 const modal = document.getElementById("photoModal");
@@ -198,5 +193,26 @@ function closeModal() {
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
+  }
+}
+
+
+
+/** EMAIL TO CLIPBOARD **/
+
+const email = document.querySelector('[data-email]')
+email.addEventListener('click', () => {
+  copyContent(email.innerHTML)
+  email.classList.add('clicked')
+
+  setTimeout(() => {
+    console.log('ok')
+    email.classList.remove('clicked')
+  }, 2000);
+})
+const copyContent = async (text) => {
+  try {
+    await navigator.clipboard.writeText(text);
+  } catch (err) {
   }
 }
