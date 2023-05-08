@@ -2,7 +2,7 @@ const fadeables = document.querySelectorAll('.fade-in')
 
 const fadeablesOptions = {
   threshold: 0,
-  rootMargin: "0px 0px -300px 0px"
+  rootMargin: "0px 0px -200px 0px"
 }
 
 const fadeablesObserver = new IntersectionObserver((entries, fadeablesObserver) => {
