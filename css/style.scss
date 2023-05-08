@@ -424,7 +424,7 @@ header {
   &.fade-in {
     iframe {
       scale: 0.2;
-      filter: blur(0.5);
+      filter: blur(0.8);
       opacity: 0.6;
     }
   }
@@ -434,14 +434,14 @@ header {
     font-size: var(--fs-700);
   }
   iframe {
-    width: 90%;
+    width: 70%;
     aspect-ratio: 16/9;
     filter: blur(0.5);
     opacity: 1;
     transform-origin: top;
-    transition: scale 1500ms,
-                blur 1500ms,
-                opacity 1500ms;
+    transition: scale 2500ms,
+                blur 2500ms,
+                opacity 2500ms;
   }
 }
 
