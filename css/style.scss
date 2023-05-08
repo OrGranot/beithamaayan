@@ -209,6 +209,18 @@
 
 /** LAYOUT **/
 
+.error-msg {
+  // min-height: 100vh;
+  padding-block-start: 6em;
+  padding-block-end: 4em;
+  margin-inline: auto;
+  text-align: center;
+
+  a {
+    font-size: 0.7em;
+    margin-block-start: 1em;
+  }
+}
 section:not(.hero,#shadow-host-companion, .about) {
   padding-block: 3rem;
   box-shadow: 0 0 10px 5px rgb(white, 1) inset;
