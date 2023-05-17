@@ -77,6 +77,11 @@
 
 /** UTILITIES **/
 
+img[data-horizontal] {
+  aspect-ratio: 0 !important;
+  max-height: 30rem;
+}
+
 .font-bold {
   font-weight: var(--fw-900);
 }
@@ -810,7 +815,7 @@ header {
     }
 
     @media(min-width: 87.5rem) {
-      gap: 3rem;
+      gap: 5em;
     }
 
     .school_section {
@@ -1309,4 +1314,56 @@ footer {
   color: rgb(190, 190, 190);
   text-decoration: none;
   cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+  & > a {
+    // display: none;
+    opacity: 0;
+
+  }
+  i {
+    transition: rotate 350ms;
+  }
+
+  &:hover {
+    scale: 1;
+
+    i {
+      rotate: -90deg;
+    }
+  }
+
+  @media(min-width: 72.5rem) {
+    & > a {
+      opacity: 1;
+    }
+  }
+}
+
+.dropdown-menu {
+  position: absolute;
+  background-size: cover;
+  display: flex;
+  min-width: 160px;
+  min-height: 40px;
+  z-index: 1;
+  padding: 0;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+  bottom: -1.5em;
+
+  @media(min-width: 72.5rem) {
+    display: none;
+    bottom: -2.25em;
+    right: -2em;
+  }
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
 }

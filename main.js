@@ -23,42 +23,11 @@ window.onload = () => {
     hero
     // .to('.inner-glow img', {scale: 1.6, objectPosition: '0%', delay: 1})
     .to('.hero .inner-glow img', {scale: 1.5, delay: 0.5 })
-    .fromTo('.hero .inner-glow img', {objectPosition: '0%'}, {objectPosition: '100%', duration: 2})
-    .to('.hero .inner-glow img', {objectPosition: '50%', duration: 2}, '-=2')
+    // .fromTo('.hero .inner-glow img', {objectPosition: '0%'}, {objectPosition: '100%', duration: 2})
+    // .to('.hero .inner-glow img', {objectPosition: '50%', duration: 2}, '-=2')
     .to('.hero .inner-glow', {width: '65%', duration: 2 }, '-=2')
     .to('.hero_text', {top: 0, duration: 1, alpha: 1}, '-=0.5');
 
-
-    // const about = gsap.timeline({
-    //     // yes, we can add it to an entire timeline!
-    //     scrollTrigger: {
-    //       trigger: ".about",
-    //       // pin: true,   // pin the trigger element while active
-    //       start: "0% 40%",
-    //       end: "10% 20%",
-    //       scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-    //     }
-    //   });
-
-    //   about
-    //     .from('.about_text', {alpha: 0, scale: 0.4, duration: 1})
-    //     .from('.about_cards .card', {alpha: 0, y: '2em', duration: 1, stagger: 1})
-    //     // .to('iframe', {alpha: 0, scale: 0.4, duration: 1}, '+=2')
-
-
-
-
-    // const video = gsap.timeline({
-    //     scrollTrigger: {
-    //       trigger: ".video",
-    //       start: "0% 90%",
-    //       end: "50% 20%",
-    //       scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-    //     }
-    //   });
-
-    //   video
-    //         .from('.video h2', {alpha: 0, scale: 0.2})
 
   });
 }
