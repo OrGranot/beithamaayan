@@ -391,7 +391,8 @@ header {
     max-height: calc(100dvh - var(--header-height));
     min-height: calc((100dvh - var(--header-height)) / 2);
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: 65%;
 
     @media(min-width: 72.5rem) {
       height: 100%;
