@@ -383,9 +383,7 @@ header {
   margin-top: calc(var(--header-height));
   min-height: calc(100dvh - var(--header-height));
   position: relative;
-  @media(min-width: 72.5rem) {
-    // display: flex;
-  }
+
 
   img {
     max-height: calc(100dvh - var(--header-height));
@@ -408,7 +406,7 @@ header {
   }
   &_text {
     padding-block: 5rem;
-    max-width: 60ch;
+    max-width: 32ch;
     text-align: center;
     font-size: var(--fs-500);
 
@@ -417,7 +415,7 @@ header {
       position: absolute;
       --container-size: 2em;
       justify-content: center;
-      left: 5vw;
+      left: 8vw;
       top: -25%;
       bottom: 0;
       width: 30%;
