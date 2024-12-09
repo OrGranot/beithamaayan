@@ -213,6 +213,21 @@ img[data-horizontal] {
 }
 
 /** LAYOUT **/
+.openday {
+  position: absolute;
+  scale: 0;
+  z-index: 100;
+  margin-block: 1rem !important;
+  margin-inline-start: 35%;
+  box-shadow: none !important;
+}
+.openday_img {
+
+  border-radius: 50%;
+  height: 20rem;
+  box-shadow: 2px 2px 20px 2px rgb(white, 0.4);
+}
+
 
 .error-msg {
   // min-height: 100vh;

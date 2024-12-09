@@ -173,3 +173,28 @@ const copyContent = async (text) => {
   } catch (err) {
   }
 }
+
+
+window.addEventListener('load', () => {
+  // Initial scale and rotation animation
+  gsap.fromTo(".openday",
+    { scale: 0, rotate: '0deg' }, // Initial state
+    { scale: 1.35, rotate: '15deg', duration: 1.5, ease: "power2.out",
+      onComplete: () => {
+        gsap.to(".openday", { scale: 1, rotate: '5deg', duration: 0.5, ease: "power2.in" });
+      }
+    }
+  );
+
+  // // Scroll-triggered effect to keep the section following the scroll
+  // gsap.to(".openday", {
+  //   scrollTrigger: {
+  //     trigger: ".openday",
+  //     start: "top top", // Start when the top of the openday section enters the viewport
+  //     end: "bottom+=100% bottom", // End when the bottom of the section goes past the bottom
+  //     pin: true, // Keep the openday section visible
+  //     pinSpacing: true, // Maintain space, adjust based on your layout
+  //     scrub: true // Smooth synching with scroll
+  //   }
+  // });
+});
